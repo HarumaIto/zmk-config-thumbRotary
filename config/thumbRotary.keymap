@@ -23,7 +23,23 @@
 
         default_layer {
             bindings = <
-&kp E  &kp I  &kp W  &kp R  &kp U  &kp O  &kp T  &kp Y  &kp Q  &kp P  &kp ESC  &kp DEL  &kp D  &kp K  &kp S  &kp F  &kp J  &kp L  &kp G  &kp H  &kp A  &trans  &trans  &kp ENTER  &kp C  &trans  &kp X  &kp V  &kp M  &kp L  &kp B  &kp N  &kp Z  &trans  &trans  &trans  &kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                        &kp E                                           &kp I  
+                                &kp W           &kp R                           &kp U           &kp O  
+                                                        &kp T           &kp Y  
+                        &kp Q                                                                           &kp P  
+                &kp ESC                                                                                         &kp DEL  
+                                        &kp D                                           &kp K  
+                                &kp S           &kp F                           &kp J           &kp L  
+                                                        &kp G           &kp H  
+                        &kp A                                                                           &trans  
+                &trans                                                                                          &kp ENTER  
+                                        &kp C                                           &trans  
+                                &kp X           &kp V                           &kp M           &kp L  
+                                                        &kp B           &kp N  
+                        &kp Z                                                                           &trans  
+                                                            &trans  &trans  
+                &kp LEFT_SHIFT                                                                                  &trans 
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
 
             sensor-bindings = <&left_encoder &right_encoder>;
