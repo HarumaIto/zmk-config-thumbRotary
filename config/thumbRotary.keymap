@@ -25,10 +25,10 @@
 
         default_layer {
             bindings = <
-&kp ESC         &kp Q             &kp W               &kp E      &kp R      &kp T      &kp Y               &kp U                &kp I      &kp O      &kp P          &kp DEL
+&kp ESC         &kp Q             &kp W               &kp E      &kp R      &kp T      &kp Y               &kp U                &kp I      &kp O      &kp P          &kp BACKSPACE
 &kp TAB         &kp A             &kp S               &kp D      &kp F      &kp G      &kp H               &kp J                &kp K      &kp L      &kp SEMICOLON  &kp ENTER
 &kp LEFT_SHIFT  &kp Z             &kp X               &kp C      &kp V      &kp B      &kp N               &kp M                &kp COMMA  &kp DOT    &kp SLASH      &kp RIGHT_SHIFT
-&kp LANG1       &kp LEFT_CONTROL  &lt 2 LEFT_COMMAND  &mkp MCLK  &kp SPACE  &mkp LCLK  &lt 1 LEFT_COMMAND  &lt 1 RIGHT_COMMAND  &mkp RCLK  &kp SPACE  &mkp MCLK      &lt 2 RIGHT_COMMAND  &kp RIGHT_ALT  &kp LANG2
+&kp LANG2       &kp LEFT_CONTROL  &lt 2 LEFT_COMMAND  &mkp MCLK  &kp SPACE  &mkp LCLK  &lt 1 LEFT_COMMAND  &lt 1 RIGHT_COMMAND  &mkp RCLK  &kp SPACE  &mkp MCLK      &lt 2 RIGHT_COMMAND  &kp RIGHT_ALT  &kp LANG1
             >;
 
             sensor-bindings = <&mouse_move_x>, <&mouse_move_y>;
