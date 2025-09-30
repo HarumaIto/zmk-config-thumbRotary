@@ -8,13 +8,13 @@
         right_encoder: right_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
+            bindings = <&kp LEFT>, <&kp RIGHT>;
         };
 
         left_encoder: left_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
+            bindings = <&kp UP>, <&kp DOWN>;
         };
     };
 
