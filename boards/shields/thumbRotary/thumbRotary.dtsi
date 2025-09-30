@@ -9,7 +9,7 @@
 / {
 	chosen {
 		zmk,kscan = &kscan0;
-		zmk,matrix-transform = &default_transform;
+		zmk,physical-layout = &physical_layout0;
 	};
 
 	default_transform: matrix_transform {
@@ -22,6 +22,13 @@
       RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)                  RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10) RC(2,11)
       RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)  RC(3,6) RC(3,7) RC(3,8) RC(3,9) RC(3,10) RC(3,11) RC(3,12) RC(3,13)
 		>;
+	};
+
+	physical_layout0: physical_layout_0 { // First physical layout, use different naming for other layouts
+	  compatible = "zmk,physical-layout";
+	  display-name = "Default Layout";
+	  kscan = <&kscan0>; // Label of the kscan node, optional if all layouts use the same
+	  transform = <&default_transform>; // Label of the matrix transform for this layout
 	};
 
 	kscan0: kscan {
