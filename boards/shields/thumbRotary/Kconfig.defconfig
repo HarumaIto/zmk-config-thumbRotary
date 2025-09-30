@@ -1,0 +1,23 @@
+if SHIELD_THUMBROTARY_LEFT
+
+config ZMK_KEYBOARD_NAME
+	default "thumbRotary"
+
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
+	default y
+
+endif
+
+if SHIELD_THUMBROTARY_RIGHT
+
+config ZMK_KEYBOARD_NAME
+	default "thumbRotary Right"
+	
+endif
+
+if SHIELD_THUMBROTARY_LEFT || SHIELD_THUMBROTARY_RIGHT
+
+config ZMK_SPLIT
+	default y
+
+endif
