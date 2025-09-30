@@ -7,14 +7,14 @@
 
 / {
     behaviors {
-        mouse_move_x: mouse_move_x {
+        mouse_move_x: left_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
             tap-ms = <20>;
         };
 
-        mouse_move_y: mouse_move_y {
+        mouse_move_y: right_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
