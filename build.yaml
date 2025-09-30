@@ -20,6 +20,6 @@
 ---
 include:
   - board: seeeduino_xiao_ble
-    shield: thumbRotary_left rgbled_adapter settings_reset
+    shield: thumbRotary_left rgbled_adapter
   - board: seeeduino_xiao_ble
-    shield: thumbRotary_right rgbled_adapter settings_reset
+    shield: thumbRotary_right rgbled_adapter
