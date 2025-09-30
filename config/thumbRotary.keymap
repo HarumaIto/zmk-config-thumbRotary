@@ -5,6 +5,20 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
+    behaviors {
+        mouse_move_x: mouse_move_x {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_RIGHT>;
+        };
+
+        mouse_move_y: mouse_move_y {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&mmv MOVE_UP>, <&mmv MOVE_DOWN>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -16,7 +30,7 @@
 &kp LANG1       &kp LEFT_CONTROL  &to 2  &mkp MCLK  &kp SPACE  &mkp LCLK  &lt 1 LEFT_COMMAND  &lt 1 RIGHT_COMMAND  &mkp RCLK  &kp SPACE  &mkp MCLK      &to 2            &kp RIGHT_ALT  &kp LANG2
             >;
 
-            sensor-bindings = <&mmv MOVE_UP MOVE_DOWN>, <&mmv MOVE_LEFT MOVE_RIGHT>;
+            sensor-bindings = <&mouse_move_x>, <&mouse_move_y>;
         };
 
         layer_1 {
