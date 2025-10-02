@@ -7,7 +7,7 @@
 
 / {
     behaviors {
-        mouse_move_x: left_encoder {
+        mouse_scroll_x: mouse_scroll_x {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
@@ -15,7 +15,7 @@
             tap-ms = <20>;
         };
 
-        mouse_move_y: right_encoder {
+        mouse_scroll_y: mouse_scroll_y {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
@@ -62,7 +62,7 @@
 &trans          &trans        &trans          &trans          &kp SPACE        &trans  &trans        &trans     &trans     &kp SPACE         &trans             &trans           &trans  &trans
             >;
 
-            sensor-bindings = <&mouse_move_x>, <&mouse_move_y>;
+            sensor-bindings = <&mouse_scroll_x>, <&mouse_scroll_y>;
         };
 
         layer_2 {
