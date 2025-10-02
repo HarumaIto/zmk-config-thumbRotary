@@ -11,6 +11,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
+
             tap-ms = <20>;
         };
 
@@ -18,7 +19,24 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+
             tap-ms = <20>;
+        };
+
+        mouse_move_y: mouse_move_y {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "MOUSE_MOVE_Y";
+            #sensor-binding-cells = <0>;
+            bindings = <&mmv MOVE_UP>, <&mmv MOVE_DOWN>;
+
+            tap-ms = <5>;
+        };
+
+        mouse_move_x: mouse_move_x {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "MOUSE_MOVE_X";
+            #sensor-binding-cells = <0>;
+            bindings = <&mmv MOVE_RIGHT>, <&mmv MOVE_LEFT>;
         };
     };
 
@@ -43,6 +61,8 @@
 &kp LEFT_SHIFT  &trans        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans        &trans     &trans     &trans            &kp SQT            &kp RIGHT_SHIFT
 &trans          &trans        &trans          &trans          &kp SPACE        &trans  &trans        &trans     &trans     &kp SPACE         &trans             &trans           &trans  &trans
             >;
+
+            sensor-bindings = <&mouse_move_x>, <&mouse_move_y>;
         };
 
         layer_2 {
