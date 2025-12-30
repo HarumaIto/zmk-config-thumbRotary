@@ -27,16 +27,16 @@
             compatible = "zmk,behavior-sensor-rotate";
             label = "MOUSE_MOVE_Y";
             #sensor-binding-cells = <0>;
-            bindings = <&mmv MOVE_Y(100)>, <&mmv MOVE_DOWN>;
-
-            tap-ms = <5>;
+            bindings = <&kp UP_ARROW>, <&kp DOWN_ARROW>;
+            tap-ms = <20>;
         };
 
         mouse_move_x: mouse_move_x {
             compatible = "zmk,behavior-sensor-rotate";
             label = "MOUSE_MOVE_X";
             #sensor-binding-cells = <0>;
-            bindings = <&mmv MOVE_RIGHT>, <&mmv MOVE_LEFT>;
+            bindings = <&kp RIGHT_ARROW>, <&kp LEFT_ARROW>;
+            tap-ms = <20>;
         };
     };
 
