@@ -27,16 +27,18 @@
             compatible = "zmk,behavior-sensor-rotate";
             label = "MOUSE_MOVE_Y";
             #sensor-binding-cells = <0>;
-            bindings = <&kp UP_ARROW>, <&kp DOWN_ARROW>;
-            tap-ms = <20>;
+            bindings = <&kp DOWN_ARROW>, <&kp UP_ARROW>;
+
+            tap-ms = <10>;
         };
 
         mouse_move_x: mouse_move_x {
             compatible = "zmk,behavior-sensor-rotate";
             label = "MOUSE_MOVE_X";
             #sensor-binding-cells = <0>;
-            bindings = <&kp RIGHT_ARROW>, <&kp LEFT_ARROW>;
-            tap-ms = <20>;
+            bindings = <&kp LEFT_ARROW>, <&kp RIGHT_ARROW>;
+
+            tap-ms = <10>;
         };
     };
 
@@ -45,10 +47,10 @@
 
         default_layer {
             bindings = <
-&kp ESC         &kp Q             &kp W               &kp E      &kp R      &kp T      &kp Y               &kp U                &kp I      &kp O      &kp P          &kp BACKSPACE
-&kp TAB         &kp A             &kp S               &kp D      &kp F      &kp G      &kp H               &kp J                &kp K      &kp L      &kp SEMICOLON  &kp ENTER
-&kp LEFT_SHIFT  &kp Z             &kp X               &kp C      &kp V      &kp B      &kp N               &kp M                &kp COMMA  &kp DOT    &kp SLASH      &kp RIGHT_SHIFT
-&kp LANG2       &kp LEFT_CONTROL  &lt 2 LEFT_COMMAND  &mkp MCLK  &kp SPACE  &mkp LCLK  &lt 1 LEFT_COMMAND  &lt 1 RIGHT_COMMAND  &mkp RCLK  &kp SPACE  &mkp MCLK      &lt 2 RIGHT_COMMAND  &kp RIGHT_ALT  &kp LANG1
+&kp ESC         &kp Q             &kp W      &kp E      &kp R      &kp T      &kp Y             &kp U  &kp I      &kp O      &kp P          &kp BACKSPACE
+&kp TAB         &kp A             &kp S      &kp D      &kp F      &kp G      &kp H             &kp J  &kp K      &kp L      &kp SEMICOLON  &kp ENTER
+&kp LEFT_SHIFT  &kp Z             &kp X      &kp C      &kp V      &kp B      &kp N             &kp M  &kp COMMA  &kp DOT    &kp SLASH      &kp RIGHT_SHIFT
+&kp LEFT_ALT    &kp LEFT_CONTROL  &kp LANG2  &mkp MCLK  &kp SPACE  &mkp LCLK  &kp LEFT_COMMAND  &to 1  &mkp RCLK  &kp SPACE  &mkp MCLK      &kp LANG1        &to 2  &kp RIGHT_GUI
             >;
 
             sensor-bindings = <&mouse_move_x>, <&mouse_move_y>;
