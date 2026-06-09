@@ -2,6 +2,5 @@
 # SPDX-License-Identifier: MIT
 
 if(CONFIG_ZMK_BEHAVIOR_INPUT_TAP)
-  zephyr_library()
-  zephyr_library_sources(src/behaviors/behavior_input_tap.c)
+  target_sources(app PRIVATE ${CMAKE_CURRENT_LIST_DIR}/src/behaviors/behavior_input_tap.c)
 endif()
