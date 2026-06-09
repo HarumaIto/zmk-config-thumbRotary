@@ -1,0 +1,7 @@
+# Copyright (c) 2024 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+config ZMK_BEHAVIOR_INPUT_TAP
+    bool "Single-shot input event behavior (for rotary-encoder mouse move)"
+    default y
+    depends on DT_HAS_ZMK_BEHAVIOR_INPUT_TAP_ENABLED && ZMK_POINTING

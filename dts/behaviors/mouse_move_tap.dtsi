@@ -1,0 +1,35 @@
+/*
+ * Copyright (c) 2024 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+/ {
+    behaviors {
+        /omit-if-no-ref/ mmv_tap: mouse_move_tap {
+            compatible = "zmk,behavior-input-tap";
+            #binding-cells = <1>;
+            x-input-code = <INPUT_REL_X>;
+            y-input-code = <INPUT_REL_Y>;
+        };
+
+        /omit-if-no-ref/ msc_tap: mouse_scroll_tap {
+            compatible = "zmk,behavior-input-tap";
+            #binding-cells = <1>;
+            x-input-code = <INPUT_REL_HWHEEL>;
+            y-input-code = <INPUT_REL_WHEEL>;
+        };
+    };
+
+    mmv_tap_input_listener: mmv_tap_input_listener {
+        compatible = "zmk,input-listener";
+        device = <&mmv_tap>;
+    };
+
+    msc_tap_input_listener: msc_tap_input_listener {
+        compatible = "zmk,input-listener";
+        device = <&msc_tap>;
+    };
+};

@@ -1,0 +1,20 @@
+# Copyright (c) 2024 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+description: |
+  Single-shot input event behavior. On each binding press, immediately emits a
+  one-shot relative input event (e.g. INPUT_REL_X / INPUT_REL_Y). On release,
+  performs no action. Useful for sensor rotation (rotary encoder) bindings that
+  should produce one pointer movement per tick.
+
+compatible: "zmk,behavior-input-tap"
+
+include: one_param.yaml
+
+properties:
+  x-input-code:
+    type: int
+    description: Input event code for the X-axis component of the encoded MOVE value.
+  y-input-code:
+    type: int
+    description: Input event code for the Y-axis component of the encoded MOVE value.
