@@ -82,6 +82,9 @@ build_one() {
   docker_run "
     set -e
     cd /workspaces/zmk-workspace
+    # Re-register Zephyr in the CMake user package registry each run, since
+    # ~/.cmake/ is not persisted across container instances.
+    west zephyr-export >/dev/null
     west build -s zmk/app -d build/${name} -b ${BOARD} -p auto -- \
       -DZMK_EXTRA_MODULES=/workspaces/zmk-workspace/zmk-config \
       -DZMK_CONFIG=/workspaces/zmk-workspace/config \
