@@ -5,24 +5,24 @@
 #include <dt-bindings/zmk/pointing.h>
 
 // One mouse-pointer step (in HID units) per encoder tick.
-#define THUMB_MOVE_STEP 12
+#define THUMB_MOVE_STEP 24 
 // One scroll-wheel step per encoder tick.
-#define THUMB_SCRL_STEP 1
+#define THUMB_SCRL_STEP 2 
 
 / {
     behaviors {
         mouse_scroll_x: mouse_scroll_x {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&msc_tap MOVE_X(-THUMB_SCRL_STEP)>, <&msc_tap MOVE_X(THUMB_SCRL_STEP)>;
-            tap-ms = <5>;
+            bindings = <&kp RIGHT_ARROW>, <&kp LEFT_ARROW>;
+            tap-ms = <20>;
         };
 
         mouse_scroll_y: mouse_scroll_y {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&msc_tap MOVE_Y(THUMB_SCRL_STEP)>, <&msc_tap MOVE_Y(-THUMB_SCRL_STEP)>;
-            tap-ms = <5>;
+            bindings = <&kp UP_ARROW>, <&kp DOWN_ARROW>;
+            tap-ms = <20>;
         };
 
         mouse_move_y: mouse_move_y {
@@ -48,7 +48,7 @@
 &kp ESC         &kp Q             &kp W      &kp E      &kp R      &kp T      &kp Y             &kp U  &kp I      &kp O      &kp P          &kp BACKSPACE
 &kp TAB         &kp A             &kp S      &kp D      &kp F      &kp G      &kp H             &kp J  &kp K      &kp L      &kp SEMICOLON  &kp ENTER
 &kp LEFT_SHIFT  &kp Z             &kp X      &kp C      &kp V      &kp B      &kp N             &kp M  &kp COMMA  &kp DOT    &kp SLASH      &kp RIGHT_SHIFT
-&kp LEFT_ALT    &kp LEFT_CONTROL  &kp LANG2  &mkp MCLK  &kp SPACE  &mkp LCLK  &kp LEFT_COMMAND  &mo 1  &mkp RCLK  &kp SPACE  &mkp MCLK      &kp LANG1        &mo 2  &kp RIGHT_GUI
+&kp LEFT_ALT    &kp LEFT_CONTROL  &kp LANG2  &mkp MCLK  &kp SPACE  &mkp LCLK  &kp LEFT_COMMAND  &mo 1  &mkp RCLK  &mo 1      &mkp MCLK      &kp LANG1        &mo 2  &kp RIGHT_GUI
             >;
 
             sensor-bindings = <&mouse_move_x>, <&mouse_move_y>;
@@ -56,10 +56,10 @@
 
         layer_1 {
             bindings = <
-&kp GRAVE       &kp NUMBER_1  &kp NUMBER_2    &kp NUMBER_3    &kp NUMBER_4     &kp N5  &kp NUMBER_6  &kp N7     &kp N8     &kp N9            &kp N0             &kp BACKSPACE
-&trans          &trans        &trans          &kp UP_ARROW    &trans           &trans  &trans        &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
-&kp LEFT_SHIFT  &trans        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans        &trans     &trans     &trans            &kp SQT            &kp RIGHT_SHIFT
-&trans          &trans        &trans          &trans          &kp SPACE        &trans  &trans        &trans     &trans     &kp SPACE         &trans             &trans           &trans  &trans
+&kp GRAVE       &kp NUMBER_1  &kp NUMBER_2    &kp NUMBER_3    &kp NUMBER_4     &kp N5  &kp NUMBER_6   &kp N7         &kp N8        &kp N9          &kp N0            &kp BACKSPACE
+&trans          &trans        &trans          &trans          &trans           &trans  &kp LEFT_ARROW &kp DOWN_ARROW &kp UP_ARROW  &kp RIGHT_ARROW &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&kp LEFT_SHIFT  &trans        &trans          &trans          &trans           &trans  &trans         &kp MINUS      &kp EQUAL     &kp DOT         &kp SQT           &kp BACKSLASH
+&trans          &trans        &trans          &trans          &kp SPACE        &trans  &trans         &trans         &trans        &kp SPACE       &trans            &trans           &trans  &trans
             >;
 
             sensor-bindings = <&mouse_scroll_x>, <&mouse_scroll_y>;
@@ -72,6 +72,8 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans          &trans      &trans   &trans   &trans
 &trans  &trans  &trans  &trans  &trans  &sys_reset  &bt BT_CLR_ALL  &bt BT_CLR_ALL  &sys_reset  &trans   &trans   &trans   &trans  &trans
             >;
+
+            sensor-bindings = <&mouse_scroll_x>, <&mouse_scroll_y>;
         };
     };
 };
